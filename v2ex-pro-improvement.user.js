@@ -183,7 +183,12 @@
  (function() {
     'use strict';
 
-    GM_addStyle(`.cell table tbody > tr > td:first-child { width: 0 !important; display: none; }`);
+    GM_addStyle(`#comment_container > .cell > table tbody > tr > td:first-child { width: 0 !important; display: none; }`);
+
+    const comments_container = document.querySelector('#Main > div:nth-child(4):has(div[id])')
+    if (comments_container) {
+        comments_container.id = "comment_container"
+    }
 })();
 
 //V2EX 帖子盖楼显示
@@ -238,7 +243,7 @@
     var comments = $('#Main > div:nth-child(4) > div[id].cell');
 
     var comment_user_nodes = $('div.cell > table > tbody > tr > td:nth-child(3) > strong > a');
-    var post_author_username = $('#Main > div:nth-child(2) > div.header > small > a')[0].innerHTML;
+    var post_author_username = $('#Main > div:nth-child(2) > div.header > small > a')[0]?.innerHTML;
     var loginUser = $('#Rightbar > div:nth-child(2) > div:nth-child(1) > table:nth-child(1) > tbody > tr > td:nth-child(3) > span > a')
     loginUser = loginUser.length ? loginUser[0].innerHTML :null ;
 
