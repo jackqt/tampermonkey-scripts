@@ -183,7 +183,7 @@
  (function() {
     'use strict';
 
-    GM_addStyle(`#comment_container > .cell > table tbody > tr > td:first-child { width: 0 !important; display: none; }`);
+    GM_addStyle(`#comment_container > .cell[id] > table tbody > tr > td:first-child { width: 0 !important; display: none; }`);
 
     const comments_container = document.querySelector('#Main > div:nth-child(4):has(div[id])')
     if (comments_container) {
