@@ -53,7 +53,7 @@
                 $.ajax({
                     url: "/mission/daily",
                     success: function(data) {
-                        var awards = $(data).find('input [value^="领取"]');
+                        var awards = $(data).find('input[value^="领取"]');
                         if (awards.length) {
                             //daily.val ("正在" + awards.attr ("value") + "...");
                             daily.val("正在领取今日的登录奖励......");
